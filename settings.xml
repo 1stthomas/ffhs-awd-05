@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <files test="dies ist ein Test">
+        <file>
+            <name>informations.xml</name>
+            <path>/</path>
+        </file>
+        <file>
+            <name>test.xml</name>
+            <path>/</path>
+        </file>
+    </files>
+</root>
