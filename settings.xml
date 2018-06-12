@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <files test="dies ist ein Test">
+    <files>
         <file>
-            <name>informations.xml</name>
+            <name>messages.xml</name>
             <path>/</path>
         </file>
         <file>
