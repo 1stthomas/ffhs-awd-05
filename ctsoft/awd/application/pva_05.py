@@ -8,7 +8,8 @@ Created on Sun Jun 10 15:26:52 2018
 import ctsoft.awd.application.message as message
 import ctsoft.awd.application.settings as settings
 import ctsoft.awd.math.numerical as numerical
-import ctsoft.awd.math.model as model
+from ctsoft.awd.math.model import Function
+#import ctsoft.awd.math.model as model
 
 
 class Application(object):
@@ -22,13 +23,13 @@ class Application(object):
         results = []
 
         setIntegrageted = self.getIntegratedSettings()
-        funcIntegrated = model.Function(**setIntegrageted)
+        funcIntegrated = Function(**setIntegrageted)
         integrated = numerical.Integrated(funcIntegrated)
         resInt = integrated.calculate()
         results.append(resInt)
 
         settings = self.getFunctionSettings()
-        function = model.Function(**settings)
+        function = Function(**settings)
 
         rectangle = numerical.Rectangle(function,
                                         integrated.getCalculatedValue())
@@ -49,7 +50,7 @@ class Application(object):
 
     def getFunction(self):
         if self.__function is None:
-            self.__function = model.Function()
+            self.__function = Function()
 
     def getFunctionSettings(self):
         return {'function': '4*r2*pi*(r1**2-x**2)**(1/2)',
