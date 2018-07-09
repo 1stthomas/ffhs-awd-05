@@ -5,9 +5,5 @@
             <name>messages.xml</name>
             <path>/</path>
         </file>
-        <file>
-            <name>test.xml</name>
-            <path>/</path>
-        </file>
     </files>
 </root>

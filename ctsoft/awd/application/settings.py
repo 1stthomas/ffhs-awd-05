@@ -13,7 +13,7 @@ class Settings(object):
         self.__filename = 'settings.xml'
         self.__settings = {}
 
-        self.load()
+        self._load()
 
     def get(self, settingType):
         return self.__settings.find(settingType)
@@ -33,6 +33,6 @@ class Settings(object):
                 return path + filename
         return None
 
-    def load(self):
+    def _load(self):
         root = xmlee.parse(self.__filename).getroot()
         self.__settings = root

@@ -9,8 +9,9 @@ import xml.etree.ElementTree as xmlee
 
 
 class Message(object):
-    def __init__(self):
+    def __init__(self, filepath):
         self.__messages = {}
+        self._load(filepath)
 
     def getMessage(self, msgType):
         for msg in self.__messages:
@@ -19,6 +20,18 @@ class Message(object):
                 return msg.text
         return ''
 
-    def load(self, path):
+    def printWelcome(self):
+        msgs = self._getWelcome()
+        for msg in msgs:
+            print(msg)
+
+    def _getWelcome(self):
+        msg = []
+        msg.append(self.getMessage('welcome-1'))
+        msg.append(self.getMessage('welcome-2'))
+        msg.append(self.getMessage('copyright'))
+        return msg
+
+    def _load(self, path):
         root = xmlee.parse(path).getroot()
         self.__messages = root.find('messages').findall('*')
